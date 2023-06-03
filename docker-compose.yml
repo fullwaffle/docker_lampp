@@ -15,10 +15,13 @@ services:
     ports:
       - "3306:3306"
     volumes:
-      - ./mysql:/var/lib/mysql
+      - db-data:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: example
   php:
     build: ./php
     volumes:
       - ./nginx-html/public:/usr/share/nginx/html
+
+volumes:
+  db-data:
