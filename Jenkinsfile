@@ -17,7 +17,7 @@ pipeline {
         stage('run and test') {
             steps {
                 sh '''
-                docker-compose up
+                docker-compose up -d
                 curl localhost:8081
                 '''
             }
