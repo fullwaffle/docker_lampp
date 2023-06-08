@@ -22,5 +22,11 @@ pipeline {
                 '''
             }
         }
+
+        stage('stop containers') {
+            steps {
+                sh 'docker-compose down'
+            }
+        }
     }
 }
